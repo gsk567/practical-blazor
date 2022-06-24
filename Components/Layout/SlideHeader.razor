@@ -1,0 +1,16 @@
+﻿<div class="slide-header">
+    <p class="section">
+        @Section
+    </p>
+    <h2 class="title">
+        @Title
+    </h2>
+</div>
+
+@code {
+    [Parameter]
+    public string Title { get; set; }
+
+    [Parameter]
+    public string Section { get; set; }
+}

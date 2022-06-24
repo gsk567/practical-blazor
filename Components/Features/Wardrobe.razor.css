@@ -1,0 +1,21 @@
+﻿.wardrobe {
+    height: 360px;
+    width: 240px;
+    border: 3px solid #602f1a;
+    background: #cab390;
+}
+
+.wardrobe .shelf {
+    border: 2px solid #602f1a;
+    height: 60px;
+}
+
+    .wardrobe .closet {
+        border: 2px solid #602f1a;
+        height: 210px;
+    }
+
+    .wardrobe .drawer {
+        border: 2px solid #602f1a;
+        height: 40px;
+    }

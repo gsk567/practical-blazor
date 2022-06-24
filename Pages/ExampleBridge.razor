@@ -1,0 +1,56 @@
+﻿@page "/examples/bridge-design-pattern"
+@inherits SlidePage
+@inject ISourceCodeProvider SourceCodeProvider
+
+<PageTitle>@GetBrandedTitle($"Bridge Design Pattern | Examples | {Texts.Title}")</PageTitle>
+
+<SlideContent HeaderTitle="Bridge Design Pattern" HeaderSection="Examples">
+    <div class="d-flex">
+        <div class="d-flex m-auto">
+            <div class="m-auto">
+               <div class="row mb-4">
+                   <div class="col-6">
+                       <Glass>
+                          <!-- Empty -->
+                      </Glass>
+                   </div>
+                   <div class="col-6">
+                      <Glass>
+                          <h2 class="m-0 whiskey">Whiskey</h2>
+                      </Glass>
+                   </div>
+               </div>
+               <div class="row">
+                   <div class="col-6">
+                       <Glass>
+                            <p class="m-0 coffee">Coffee</p>
+                       </Glass>
+                   </div>
+                   <div class="col-6">
+                       <Glass>
+                            <code class="code">javascript:void();</code>
+                       </Glass>
+                   </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex m-auto">
+            <div class="d-flex m-auto">
+                <SourceCodeHighlighter SourceCode="@glassComponentSourceCode" Language="cshtml-razor"/>
+                <SourceCodeHighlighter SourceCode="@bridgeDesignPatternExampleSourceCode" Language="cshtml-razor"/>
+            </div>
+        </div>
+    </div>
+</SlideContent>
+
+@code {
+    private string glassComponentSourceCode;
+    private string bridgeDesignPatternExampleSourceCode;
+
+    protected override async Task OnInitializedAsync()
+    {
+        this.glassComponentSourceCode = await SourceCodeProvider.GetSourceCodeStringAsync("GlassRazor");
+        this.bridgeDesignPatternExampleSourceCode = await SourceCodeProvider.GetSourceCodeStringAsync("BridgeDesignPattern");
+        await base.OnInitializedAsync();
+    }
+}

@@ -1,0 +1,34 @@
+﻿<div class="wardrobe row">
+    <div class="shelf col-6">
+        @ShelfLeft
+    </div>
+    <div class="shelf col-6">
+        @ShelfRight
+    </div>
+    <div class="closet col-12">
+        @Closet
+    </div>
+    <div class="drawer col-12">
+        @DrawerTop
+    </div>
+    <div class="drawer col-12">
+        @DrawerBottom
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public RenderFragment ShelfLeft { get; set; }
+
+    [Parameter]
+    public RenderFragment ShelfRight { get; set; }
+
+    [Parameter]
+    public RenderFragment Closet { get; set; }
+
+    [Parameter]
+    public RenderFragment DrawerTop { get; set; }
+
+    [Parameter]
+    public RenderFragment DrawerBottom { get; set; }
+}

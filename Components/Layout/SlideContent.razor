@@ -1,0 +1,78 @@
+﻿@inject NavigationManager NavigationManager
+@inject IGlobalDomEventService GlobalDomEventService
+@inject IGlobalNavigationService GlobalNavigationService
+
+<div class="slide-content">
+    <div class="@SlideBackgroundClass">
+        <div class="position-relative w-100 h-100">
+            <div class="slide-content-container">
+                @if (!string.IsNullOrWhiteSpace(HeaderTitle))
+                {
+                    <SlideHeader Title="@HeaderTitle" Section="@HeaderSection"></SlideHeader>
+                }
+                <div class="main">
+                    <div class="w-100 h-100 d-flex">
+                        <div class="m-auto w-100 px-5">
+                            @ChildContent
+                        </div>
+                    </div>
+                </div>
+                @if (Type != SlideType.Main)
+                {
+                    <SlideFooter></SlideFooter>
+                }
+            </div>
+            <div class="slide-nav-section h-100 position-absolute top-0 bottom-0 start-0">
+                @if (!GlobalNavigationService.IsCurrentSlideTheFirst())
+                {
+                    <div class="d-flex h-100">
+                        <button class="m-auto slide-nav-button" @onclick="GlobalNavigationService.GoToPreviousSlide">
+                            <span class="oi oi-chevron-left"></span>
+                        </button>
+                    </div>
+                }
+            </div>
+            <div class="slide-nav-section h-100 position-absolute top-0 bottom-0 end-0">
+                @if (!GlobalNavigationService.IsCurrentSlideTheLast())
+                {
+                    <div class="d-flex h-100">
+                        <button class="m-auto slide-nav-button" @onclick="GlobalNavigationService.GoToNextSlide">
+                            <span class="oi oi-chevron-right"></span>
+                        </button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    [Parameter]
+    public SlideType Type { get; set; }
+
+    [Parameter]
+    public string HeaderTitle { get; set; }
+
+    [Parameter]
+    public string HeaderSection { get; set; }
+
+    private string SlideBackgroundClass
+    {
+        get
+        {
+            switch (this.Type)
+            {
+                case SlideType.Base:
+                default:
+                    return string.Empty;
+                case SlideType.Main:
+                    return "bg-main";
+                case SlideType.Secondary:
+                    return "bg-secondary";
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+﻿@inject IGlobalNavigationService GlobalNavigationService
+
+<div class="d-flex px-4 py-4">
+    <div class="logo">
+        <img src="/images//logo-full-color.png"/>
+    </div>
+    <div class="page">
+        <p>
+            @GlobalNavigationService.GetCurrentSlideIndex()
+        </p>
+    </div>
+</div>
+
+@code {
+
+}

@@ -1,0 +1,14 @@
+﻿<!-- Bridge Design Pattern Example -->
+
+<Glass>
+    <!-- Empty -->
+</Glass>
+<Glass>
+    <h2 class="m-0 whiskey">Whiskey</h2>
+</Glass>
+<Glass>
+     <p class="m-0 coffee">Coffee</p>
+</Glass>
+<Glass>
+     <code class="code">javascript:void();</code>
+</Glass>

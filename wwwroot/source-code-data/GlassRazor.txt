@@ -1,0 +1,12 @@
+﻿<!-- Glass.razor -->
+
+<div class="glass">
+    <div class="glass-content">
+        @ChildContent
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+}

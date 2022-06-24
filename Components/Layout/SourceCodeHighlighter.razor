@@ -1,0 +1,31 @@
+﻿@inject IJSRuntime JS
+
+<div class="card">
+    <div class="card-body">
+        <div class="highlighted-source-code">
+            <pre>
+                <code>
+                    @((MarkupString)highlightedSourceCodeHtml)
+                </code>
+            </pre>
+        </div>
+    </div>
+</div>
+
+@code {
+    private string highlightedSourceCodeHtml;
+
+    [Parameter]
+    public string SourceCode { get; set; }
+
+    [Parameter]
+    public string Language { get; set; }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (!string.IsNullOrWhiteSpace(SourceCode) && !string.IsNullOrWhiteSpace(Language))
+        {
+            this.highlightedSourceCodeHtml = await JS.InvokeAsync<string>("highlightCode", SourceCode, Language);
+        }
+    }
+}

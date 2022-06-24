@@ -1,0 +1,12 @@
+﻿.logo-container {
+    position: absolute;
+    bottom: 120px;
+}
+
+.logo-container img {
+    width: 300px !important;
+}
+
+.title-page-padding-left {
+    padding-left: 100px !important;
+}

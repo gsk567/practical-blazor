@@ -1,0 +1,14 @@
+﻿pre {
+    margin: 0;
+}
+
+.card {
+    border-radius: 0;
+    box-shadow: 0 0 5px rgba(0,0,0,.1);
+    margin-bottom: 15px;
+    margin-right: 15px;
+}
+
+.highlighted-source-code * {
+    font-size: 14px;
+}
