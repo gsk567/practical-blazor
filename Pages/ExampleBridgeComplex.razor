@@ -10,17 +10,34 @@
             <div class="m-auto">
                <Wardrobe>
                    <ShelfLeft>
-                       Clothes
+                       <img class="w-100 h-100"
+                            src="/images/playstation.png"/>
                    </ShelfLeft>
                    <ShelfRight>
-                       Socks
+                       <img class="w-100 h-100"
+                            src="/images/graduation-hat.png"/>
                    </ShelfRight>
+                   <HangingSection>
+                       <img class="w-100 h-100"
+                            src="/images/shirts.png"/>
+                   </HangingSection>
+                   @* <DrawerTop> *@
+                   @*     <!-- Empty --> *@
+                   @* </DrawerTop> *@
+                   <DrawerBottom>
+                       <div class="w-100 h-100 d-flex">
+                           <button class="btn btn-primary w-100 p-0 m-auto"
+                                   @onclick="() => counter++">
+                               Counter @counter
+                           </button>
+                       </div>
+                   </DrawerBottom>
                </Wardrobe>
             </div>
         </div>
         <div class="d-flex m-auto">
             <div class="d-flex m-auto">
-                <SourceCodeHighlighter SourceCode="@glassComponentSourceCode" Language="cshtml-razor"/>
+                <SourceCodeHighlighter SourceCode="@wardrobeComponentSourceCode" Language="cshtml-razor"/>
                 <SourceCodeHighlighter SourceCode="@bridgeDesignPatternExampleSourceCode" Language="cshtml-razor"/>
             </div>
         </div>
@@ -28,13 +45,14 @@
 </SlideContent>
 
 @code {
-    private string glassComponentSourceCode;
+    private string wardrobeComponentSourceCode;
     private string bridgeDesignPatternExampleSourceCode;
+    private int counter;
 
-    protected override async Task OnInitializedAsync()
+        protected override async Task OnInitializedAsync()
     {
-        this.glassComponentSourceCode = await SourceCodeProvider.GetSourceCodeStringAsync("GlassRazor");
-        this.bridgeDesignPatternExampleSourceCode = await SourceCodeProvider.GetSourceCodeStringAsync("BridgeDesignPattern");
+        this.wardrobeComponentSourceCode = await SourceCodeProvider.GetSourceCodeStringAsync("WardrobeRazor");
+        this.bridgeDesignPatternExampleSourceCode = await SourceCodeProvider.GetSourceCodeStringAsync("BridgeDesignPatternComplex");
         await base.OnInitializedAsync();
     }
 }

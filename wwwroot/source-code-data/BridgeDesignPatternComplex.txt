@@ -1,0 +1,27 @@
+﻿<!-- Bridge Design Pattern Example -->
+
+<Wardrobe>
+    <ShelfLeft>
+        <img class="w-100 h-100"
+             src="/images/playstation.png"/>
+    </ShelfLeft>
+    <ShelfRight>
+        <img class="w-100 h-100"
+             src="/images/graduation-hat.png"/>
+    </ShelfRight>
+    <HangingSection>
+        <img class="w-100 h-100"
+             src="/images/shirts.png"/>
+    </HangingSection>
+    @* <DrawerTop> *@
+    @*     <!-- Empty --> *@
+    @* </DrawerTop> *@
+    <DrawerBottom>
+        <div class="w-100 h-100 d-flex">
+            <button class="btn btn-primary w-100 p-0 m-auto"
+                    @onclick="() => counter++">
+                Counter @counter
+            </button>
+        </div>
+    </DrawerBottom>
+</Wardrobe>

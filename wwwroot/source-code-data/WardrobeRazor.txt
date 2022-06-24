@@ -1,4 +1,6 @@
-﻿<div class="wardrobe row">
+﻿<!-- Wardrobe.razor -->
+
+<div class="wardrobe row">
     <div class="shelf col-6">
         @ShelfLeft
     </div>
