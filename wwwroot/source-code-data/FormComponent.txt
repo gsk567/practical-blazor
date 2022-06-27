@@ -1,0 +1,25 @@
+﻿<EditForm Model="@model" OnValidSubmit="@Submit">
+    <DataAnnotationsValidator/>
+    <div>
+        <div class="mb-2">
+            <label class="form-label">Email</label>
+            <InputText class="form-control" @bind-Value="@model.Email"/>
+            <ValidationMessage For="() => model.Email"/>
+        </div>
+        <div class="mb-2">
+            <label class="form-label">Password</label>
+            <InputText type="password" class="form-control" @bind-Value="@model.Password"/>
+            <ValidationMessage For="() => model.Password"/>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+</EditForm>
+
+@code {
+    private LoginViewModel model = new ();
+    
+    private void Submit()
+    {
+        JS.InvokeVoidAsync("alert", $"Login with {this.model.Email} and {this.model.Password}");
+    }
+}

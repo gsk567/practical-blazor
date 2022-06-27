@@ -1,4 +1,5 @@
 ﻿@inject IJSRuntime JS
+@inject ISourceCodeProvider SourceCodeProvider
 
 <div class="card">
     <div class="card-body">
@@ -15,17 +16,20 @@
 @code {
     private string highlightedSourceCodeHtml;
 
+    private string sourceCode;
+    
     [Parameter]
-    public string SourceCode { get; set; }
+    public string SourceCodeKey { get; set; }
 
     [Parameter]
     public string Language { get; set; }
 
     protected override async Task OnParametersSetAsync()
     {
-        if (!string.IsNullOrWhiteSpace(SourceCode) && !string.IsNullOrWhiteSpace(Language))
+        if (!string.IsNullOrWhiteSpace(SourceCodeKey) && !string.IsNullOrWhiteSpace(Language))
         {
-            this.highlightedSourceCodeHtml = await JS.InvokeAsync<string>("highlightCode", SourceCode, Language);
+            this.sourceCode = await SourceCodeProvider.GetSourceCodeStringAsync(SourceCodeKey); 
+            this.highlightedSourceCodeHtml = await JS.InvokeAsync<string>("highlightCode", this.sourceCode, Language);
         }
     }
 }

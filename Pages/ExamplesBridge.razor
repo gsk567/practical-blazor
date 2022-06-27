@@ -1,6 +1,5 @@
 ﻿@page "/examples/bridge-design-pattern"
 @inherits SlidePage
-@inject ISourceCodeProvider SourceCodeProvider
 
 <PageTitle>@GetBrandedTitle($"Bridge Design Pattern | Examples | {Texts.Title}")</PageTitle>
 
@@ -36,21 +35,12 @@
         </div>
         <div class="d-flex m-auto">
             <div class="d-flex m-auto">
-                <SourceCodeHighlighter SourceCode="@glassComponentSourceCode" Language="cshtml-razor"/>
-                <SourceCodeHighlighter SourceCode="@bridgeDesignPatternExampleSourceCode" Language="cshtml-razor"/>
+                <SourceCodeRenderer SourceCodeKey="GlassRazor" Language="cshtml-razor"/>
+                <SourceCodeRenderer SourceCodeKey="BridgeDesignPattern" Language="cshtml-razor"/>
             </div>
         </div>
     </div>
 </SlideContent>
 
 @code {
-    private string glassComponentSourceCode;
-    private string bridgeDesignPatternExampleSourceCode;
-
-    protected override async Task OnInitializedAsync()
-    {
-        this.glassComponentSourceCode = await SourceCodeProvider.GetSourceCodeStringAsync("GlassRazor");
-        this.bridgeDesignPatternExampleSourceCode = await SourceCodeProvider.GetSourceCodeStringAsync("BridgeDesignPattern");
-        await base.OnInitializedAsync();
-    }
 }

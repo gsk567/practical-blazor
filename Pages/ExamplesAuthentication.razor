@@ -1,0 +1,72 @@
+﻿@page "/examples/authentication"
+@using System.Text
+@inherits SlidePage
+@inject IAuthenticationService AuthenticationService
+
+<PageTitle>@GetBrandedTitle($"Authentication | Examples | {Texts.Title}")</PageTitle>
+
+<SlideContent HeaderTitle="Authentication" HeaderSection="Examples">
+    <AuthorizeView>
+        <Authorized>
+            <div class="d-flex w-100 mb-3">
+                <button type="button" class="btn btn-dark me-3 ms-auto" @onclick="LogoutAsync"><span class="oi oi-account-logout"></span></button>
+            </div>
+            <div class="d-flex m-auto">
+                <SourceCodeRenderer SourceCodeKey="AuthProvider" Language="csharp"></SourceCodeRenderer>
+                <SourceCodeRenderer SourceCodeKey="AuthService" Language="csharp"></SourceCodeRenderer>
+                <SourceCodeRenderer SourceCodeKey="AuthComponent" Language="cshtml-razor"></SourceCodeRenderer>
+            </div>
+            
+        </Authorized>
+        <NotAuthorized Context="not_auth_context">
+            <div class="d-flex">
+                <div class="m-auto">
+                    <div class="alert alert-info">
+                        Email: <strong>admin@example.com</strong> <br/> 
+                        Password: <strong>Admin123!</strong>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <EditForm Context="form_context" Model="@model" OnValidSubmit="@LoginAsync">
+                                <DataAnnotationsValidator/>
+                                <div>
+                                    <div class="mb-2">
+                                        <label class="form-label">Email</label>
+                                        <InputText class="form-control" @bind-Value="@model.Email"/>
+                                        <ValidationMessage For="() => model.Email"/>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label class="form-label">Password</label>
+                                        <InputText type="password" class="form-control" @bind-Value="@model.Password"/>
+                                        <ValidationMessage For="() => model.Password"/>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </EditForm>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </NotAuthorized>
+    </AuthorizeView>
+</SlideContent>
+
+@code {
+    private LoginViewModel model = new ();
+    
+    private async Task LoginAsync()
+    {
+        if (!await AuthenticationService.LoginAsync(this.model.Email, this.model.Password))
+        {
+            return;
+        }
+        
+        model.Email = null;
+        model.Password = null;
+    }
+
+    private async Task LogoutAsync()
+    {
+        await AuthenticationService.LogoutAsync();
+    }
+}

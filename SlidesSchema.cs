@@ -13,9 +13,15 @@ namespace PracticalBlazor
             typeof(WhoAmI),
             typeof(Agenda),
             typeof(PurposeIndex),
-            typeof(PurposeContent),
-            typeof(ExampleBridge),
-            typeof(ExampleBridgeComplex),
+            typeof(PurposeFramework),
+            typeof(ExamplesIndex),
+            typeof(ExamplesComponents),
+            typeof(ExamplesInheritance),
+            typeof(ExamplesCommunication),
+            typeof(ExamplesBridge),
+            typeof(ExamplesBridgeComplex),
+            typeof(ExamplesForms),
+            typeof(ExamplesAuthentication),
             typeof(ThankYou)
         };
     }

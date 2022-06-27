@@ -1,0 +1,11 @@
+﻿<AuthorizeView>
+    <Authorized>
+        <div class="d-flex w-100 mb-3">
+            <button type="button" class="btn btn-dark me-3 ms-auto" @onclick="LogoutAsync"><span class="oi oi-account-logout"></span></button>
+        </div>
+        <!-- Protected Content -->
+    </Authorized>
+    <NotAuthorized Context="not_auth_context">
+        <!-- Login Form -->
+    </NotAuthorized>
+</AuthorizeView>
