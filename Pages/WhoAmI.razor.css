@@ -1,0 +1,6 @@
+﻿.custom-bg ::deep .slide-sidebar {
+    background-image: url(/images/author.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

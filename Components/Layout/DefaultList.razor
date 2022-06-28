@@ -1,0 +1,28 @@
+﻿<div class="d-flex">
+            <ul class="m-auto default-items">
+                @for (var i = 0; i < Items.Count(); i++)
+                {
+                    <li class="default-item">
+                        @if (ShowNumberBullets)
+                        {
+                            <span class="index">@($"{(i+1):00}")</span>
+                        }
+                        else
+                        {
+                            <span class="index">
+                                <span class="oi oi-check me-3"></span>
+                            </span>
+                        }
+                        <span class="title">@Items.ElementAt(i)</span>
+                    </li>
+                }
+            </ul>
+        </div>
+
+@code {
+    [Parameter]
+    public IEnumerable<string> Items { get; set; }
+
+    [Parameter]
+    public bool ShowNumberBullets { get; set; }
+}

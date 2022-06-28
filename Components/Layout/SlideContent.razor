@@ -12,12 +12,12 @@
                 }
                 <div class="main">
                     <div class="w-100 h-100 d-flex">
-                        <div class="m-auto w-100 px-5">
+                        <div class="@ContentClass">
                             @ChildContent
                         </div>
                     </div>
                 </div>
-                @if (Type != SlideType.Main)
+                @if (Type != SlideType.Main && !HideFooter)
                 {
                     <SlideFooter></SlideFooter>
                 }
@@ -58,6 +58,12 @@
 
     [Parameter]
     public string HeaderSection { get; set; }
+
+    [Parameter]
+    public string ContentClass { get; set; } = "m-auto w-100 px-5";
+
+    [Parameter]
+    public bool HideFooter { get; set; }
 
     private string SlideBackgroundClass
     {

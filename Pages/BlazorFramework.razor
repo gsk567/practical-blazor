@@ -1,0 +1,42 @@
+﻿@page "/blazor/framework"
+@inherits SlidePage
+
+<PageTitle>@GetBrandedTitle($"Framework | Blazor | {Texts.Title}")</PageTitle>
+
+<SlideContent HeaderTitle="Framework" HeaderSection="Blazor">
+    <div class="w-100 row">
+        <div class="col-4 d-flex">
+            <img class="w-75 m-auto" src="/images/blazor.png"/>
+        </div>
+        <div class="col-4 d-flex">
+            <div class="m-auto mt-5">
+                 <DefaultList Items="@definitionItemsColumn1"></DefaultList>
+            </div>
+        </div>
+        <div class="col-4 d-flex">
+            <div class="m-auto">
+                 <DefaultList Items="@definitionItemsColumn2"></DefaultList>
+            </div>
+        </div>
+    </div>
+</SlideContent>
+
+@code {
+    private string[] definitionItemsColumn1 = new string[]
+    {
+        "Framework for building SPA",
+        "C# instead of JavaScript",
+        "Leverage the existing .NET ecosystem",
+        "Share app logic across server and client",
+        ".NET's performance, reliability, and security",
+    };
+    
+    private string[] definitionItemsColumn2 = new string[]
+    {
+        "Provided integrated development environment",
+        "Simplified API",
+        "Standardized API",
+        "Gentle learning curve",
+        "Decent documentation",
+    };
+}

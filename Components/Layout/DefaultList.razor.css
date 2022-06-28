@@ -1,0 +1,18 @@
+﻿
+.default-items {
+    list-style: none;
+}
+
+.default-item {
+    font-size: 30px;
+    color: var(--main-color);
+    margin-bottom: 50px;  
+}
+
+    .default-item .index {
+        font-weight: bold;
+        margin-right: 10px;
+    }
+
+    .default-item .title {
+    }

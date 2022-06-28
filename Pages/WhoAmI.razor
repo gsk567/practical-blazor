@@ -3,10 +3,23 @@
 
 <PageTitle>@GetBrandedTitle($"Who am I | {Texts.Title}")</PageTitle>
 
-<SlideContent HeaderTitle="Who Am I" HeaderSection="Introduction">
-
+<SlideContent ContentClass="m-auto w-100 h-100 px-5" HideFooter="@true">
+    <div class="d-flex w-100 h-100 custom-bg">
+        <SlideSidebar Title="Who Am I" Section="@Texts.Title"/>
+        <div class="ml-200 my-auto">
+            <DefaultList Items="@definitionItems"></DefaultList>
+        </div>
+    </div>
 </SlideContent>
 
 @code {
-
+    private string[] definitionItems = new string[]
+    {
+        "Georgi Karagogov",
+        "Full Stack Software Engineer",
+        "Practical Specialist",
+        "Open Source Author",
+        "UX/UI Enthusiast",
+        "Low Level Entrepreneur",
+    };
 }

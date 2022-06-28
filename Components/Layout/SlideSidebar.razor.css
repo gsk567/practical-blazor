@@ -1,0 +1,30 @@
+﻿.slide-sidebar {
+    height: 100%;
+    width: calc(30% + 3rem);
+    display: block;
+    padding: 35px;
+    margin-left: -3rem !important;
+    background: linear-gradient(90deg, rgba(0, 32, 96, 1), rgba(0, 44, 133, 1));
+}
+
+    .slide-sidebar .section {
+        color: rgb(0, 177, 236);
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+.slide-sidebar .title {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+    .slide-sidebar .logo {
+        position: absolute;
+        bottom: 2rem;
+        left: calc(2rem + 15px);
+    }
+
+        .slide-sidebar .logo img {
+            height: 20px;
+        }

@@ -3,10 +3,32 @@
 
 <PageTitle>@GetBrandedTitle($"Agenda | {Texts.Title}")</PageTitle>
 
-<SlideContent>
-    <h1>Content</h1>
+<SlideContent ContentClass="m-auto w-100 h-100 px-5" HideFooter="@true">
+    <div class="d-flex w-100 h-100">
+        <SlideSidebar Title="Agenda" Section="@Texts.Title"/>
+        <div class="ml-200 my-auto">
+            @if (agendaList != null && agendaList.Any())
+            {
+                <ul class="m-auto default-items">
+                    @foreach (var item in agendaList)
+                   {
+                       <li class="default-item">
+                            <span class="index">@($"{(agendaList.IndexOf(item) + 1):00}")</span>
+                            <NavLink href="@item.Link" class="title">@item.Name</NavLink>
+                        </li>
+                   }
+                </ul>
+            }
+        </div>
+    </div>
 </SlideContent>
 
 @code {
-
+    private List<(string Name, string Link)> agendaList = new List<(string Name, string Link)>
+    {
+        ("Blazor", "/blazor"),
+        ("Examples", "/examples"),
+        ("Demo", "/demo"),
+        ("Q&A", "/qna"),
+    };
 }

@@ -2,7 +2,7 @@
 
 namespace PracticalBlazor.Components.Features
 {
-    public class Animal : ComponentBase
+    public abstract class Animal : ComponentBase
     {
         [Parameter]
         public string Name { get; set; }

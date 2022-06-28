@@ -1,0 +1,27 @@
+﻿
+.default-items {
+    list-style: none;
+}
+
+.default-item {
+    font-size: 30px;
+    color: var(--main-color) !important;
+    margin-bottom: 50px;
+}
+
+    .default-item ::deep a {
+        text-decoration: none;
+        color: var(--main-color) !important;
+    }
+
+    .default-item ::deep a:hover {
+        text-decoration: underline;
+    }
+
+    .default-item .index {
+        font-weight: bold;
+        margin-right: 10px;
+    }
+
+    .default-item .title {
+    }
