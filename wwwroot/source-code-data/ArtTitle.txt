@@ -1,0 +1,15 @@
+﻿<!-- ArtTitle.razor (CSS after the presentation) -->
+
+<div>
+    <h1>
+        @foreach (var charSymbol in Title.ToCharArray())
+       {
+           <span>@charSymbol</span>
+       }
+    </h1>
+</div>
+
+@code {
+    [Parameter]
+    public string Title { get; set; }
+}

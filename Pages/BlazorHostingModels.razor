@@ -8,16 +8,21 @@
     <div class="col-6">
         <div title="Blazor Server">
             <div class="row">
-                <div class="col-6">
+                <div class="col-12">
+                    <h3 class="title">Blazor Server</h3>
+                </div>
+                <div class="col-5">
                     <img class="w-100" src="/images/blazor-server.png">
                 </div>
-                <div class="col-6">
-                    <ul>
-                        <li>Complete .NET Core API compatibility</li>
-                        <li>Direct access to server sources</li>
-                        <li>Small payload size with fast initial load time</li>
-                        <li>App code secure and private on the server</li>
-                    </ul>
+                <div class="col-7">
+                    <DefaultList Items="@(new string []
+                    {
+                        "Complete .NET Core API compatibility",
+                        "Direct access to server sources",
+                        "Small payload size with fast initial load time",
+                        "App code secure and private on the server"
+                    })">
+                    </DefaultList>
                 </div>
             </div>
         </div>
@@ -25,15 +30,20 @@
     <div class="col-6">
         <div title="Blazor WebAssembly">
             <div class="row">
-                <div class="col-6">
+                <div class="col-12">
+                    <h3 class="title">Blazor WebAssembly</h3>
+                </div>
+                <div class="col-3">
                     <img class="w-100" src="/images/blazor-webassembly.png">
                 </div>
-                <div class="col-6">
-                    <ul>
-                        <li>Run apps offline once downloaded</li>
-                        <li>Static site hosting</li>
-                        <li>Offloads processing to clients</li>
-                    </ul>
+                <div class="col-9">
+                    <DefaultList Items="@(new string []
+                    {
+                        "Run apps offline once downloaded",
+                        "Static site hosting",
+                        "Offloads processing to clients"
+                    })">
+                    </DefaultList>
                 </div>
             </div>
         </div>
@@ -42,21 +52,5 @@
 </SlideContent>
 
 @code {
-    private string[] definitionItemsColumn1 = new string[]
-    {
-        "Framework for building SPA",
-        "C# instead of JavaScript",
-        "Leverage the existing .NET ecosystem",
-        "Share app logic across server and client",
-        ".NET's performance, reliability, and security",
-    };
-    
-    private string[] definitionItemsColumn2 = new string[]
-    {
-        "Provided integrated development environment",
-        "Simplified API",
-        "Standardized API",
-        "Gentle learning curve",
-        "Decent documentation",
-    };
+
 }

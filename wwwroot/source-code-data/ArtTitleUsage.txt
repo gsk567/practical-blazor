@@ -1,0 +1,6 @@
+﻿<!-- Component consuming -->
+
+<div class="m-auto">
+    <ArtTitle Title="Hello"></ArtTitle>
+    <ArtTitle Title="Summer"></ArtTitle>
+</div>

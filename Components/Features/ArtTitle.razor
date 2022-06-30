@@ -1,0 +1,13 @@
+﻿<div>
+    <h1>
+        @foreach (var charSymbol in Title.ToCharArray())
+       {
+           <span>@charSymbol</span>
+       }
+    </h1>
+</div>
+
+@code {
+    [Parameter]
+    public string Title { get; set; }
+}

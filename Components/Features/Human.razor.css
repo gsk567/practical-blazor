@@ -1,0 +1,37 @@
+﻿
+.human {
+    width: 200px;
+    height: 400px;
+    display: block;
+    background: #e9c36f;
+    border-radius: 20px;
+    position: relative;
+}
+
+    .human::before {
+        position: absolute;
+        content: '* *';
+        font-size: 30px;
+        text-align: center;
+        padding-top: 10px;
+        width: 70px;
+        height: 70px;
+        background: #e9c36f;
+        top: -70px;
+        left: 65px;
+        border-radius: 50%;
+    }
+
+    .human .card {
+        border: none;
+        background: none;
+    }
+
+.human ::deep .card-title {
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+.human ::deep .card-header {
+    background: #000073;
+}

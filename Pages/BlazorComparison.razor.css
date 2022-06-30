@@ -1,0 +1,26 @@
+﻿.table {
+    border: none;
+}
+
+tr {
+    border: none;
+    margin-bottom: 5px;
+}
+
+thead th {
+    text-align: center;
+}
+
+td, th {
+    color: var(--main-color);
+    font-size: 20px;
+    border: none;
+    padding: 12px;
+    margin-bottom: 12px;
+}
+
+td div {
+   box-shadow: 0 0 5px rgba(0,0,0,.3);
+   padding: 12px;
+   text-align: center;
+}

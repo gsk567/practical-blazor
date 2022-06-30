@@ -1,0 +1,44 @@
+﻿@inject IJSRuntime JS
+
+<div class="m-auto">
+   <div class="input-group">
+       <div class="input-group-prepend">
+           <span class="input-group-text">Snowflakes Count</span>
+       </div>
+       <input class="form-control" disabled="@isSnowInitialized" placeholder="Snowflakes count" @bind-value="snowflakeCount" />
+       <div class="input-group-append">
+           <button disabled="@isSnowInitialized" @onclick="LetItSnow" class="btn btn-primary">Let it snow</button>
+       </div>
+   </div>
+</div>
+
+
+@code {
+    private int snowflakeCount = 100;
+
+    private IJSObjectReference module;
+
+    private bool isSnowInitialized = false;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            this.module = await JS.InvokeAsync<IJSObjectReference>("import", "./js/PureSnow.js");
+        }
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        if (this.module is not null)
+        {
+            await this.module.DisposeAsync();
+        }
+    }
+
+    private async Task LetItSnow()
+    {
+        await this.module.InvokeVoidAsync("letItSnow", this.snowflakeCount);
+        this.isSnowInitialized = true;
+    }
+}

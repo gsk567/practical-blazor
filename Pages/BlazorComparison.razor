@@ -1,14 +1,110 @@
-﻿@page "/blazor/applications"
+﻿@page "/blazor/comparison"
 @inherits SlidePage
 
-<PageTitle>@GetBrandedTitle($"Applications | Blazor | {Texts.Title}")</PageTitle>
+<PageTitle>@GetBrandedTitle($"Comparison | Blazor | {Texts.Title}")</PageTitle>
 
-<SlideContent HeaderTitle="Applications" HeaderSection="Blazor">
+<SlideContent HeaderTitle="Comparison" HeaderSection="Blazor">
     <div class="w-100 row">
-
+        <div class="col-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        @foreach (var framework in frameworks)
+                        {
+                           <th>@framework</th>
+                        }
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (var i = 0; i < criteries.Length; i++)
+                   {
+                        <tr>
+                           <th>@criteries[i]</th>
+                           @foreach (var framework in frameworks)
+                          {
+                              <td>
+                                  <div>
+                                      @data[framework].ElementAtOrDefault(i)
+                                  </div>
+                              </td>
+                          }
+                       </tr>
+                   }
+                </tbody>
+            </table>
+        </div>
     </div>
 </SlideContent>
 
 @code {
+    private string[] frameworks = new string[]
+    {
+        "Angular",
+        "React",
+        "Vue",
+        "Blazor",
+    };
 
+    private string[] criteries = new string[]
+    {
+        "Languages",
+        "Ownership",
+        "Built-in APIs",
+        "Community",
+        "Release Year",
+        "Learning Curve"
+    };
+
+    private Dictionary<string, IEnumerable<string>> data = new Dictionary<string, IEnumerable<string>>
+    {
+        {
+            "Angular",
+            new List<string>
+            {
+                "TypeScript",
+                "Google",
+                "Full Set",
+                "Large",
+                "2010 (2016)",
+                "Steep"
+            }
+        },
+        {
+            "React",
+            new List<string>
+            {
+                "JavaScript, TypeScript",
+                "Meta (Facebook)",
+                "Minimal Set",
+                "Large",
+                "2013",
+                "Easy to learn"
+            }
+        },
+        {
+            "Vue",
+            new List<string>
+            {
+                "JavaScript, TypeScript",
+                "Evan You",
+                "Full Set",
+                "Medium",
+                "2014",
+                "Easy to learn"
+            }
+        },
+        {
+            "Blazor",
+            new List<string>
+            {
+                "C#",
+                "Microsoft",
+                "Full Set",
+                "Small/Medium",
+                "2018",
+                "Smooth and Easy"
+            }
+        }
+    };
 }

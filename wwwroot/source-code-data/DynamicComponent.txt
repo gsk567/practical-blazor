@@ -1,0 +1,32 @@
+﻿<div class="m-auto">
+   <div class="mb-2">
+       I am Mancho and want to be 
+       <select class="form-control" @bind="@selectedAnimalType">
+          <option value="">Nothing</option>
+          @foreach (var animal in animalTypes)
+          {
+              <option value="@animal.FullName">@animal.Name</option>
+          }
+       </select>
+   </div>
+
+   @if (!string.IsNullOrEmpty(selectedAnimalType))
+   {
+       <DynamicComponent Type="@Type.GetType(selectedAnimalType)" Parameters="@componentParameters"></DynamicComponent>
+   }
+</div>
+
+@code {
+    private List<Type> animalTypes = new List<Type>
+    {
+        typeof(Dog),
+        typeof(Cat)
+    };
+
+    private string selectedAnimalType = null;
+
+    private Dictionary<string, object> componentParameters = new ()
+    {
+        { "Name", "Mancho" }
+    };
+}

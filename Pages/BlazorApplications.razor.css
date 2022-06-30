@@ -1,0 +1,23 @@
+﻿.icon {
+    font-size: 50px;
+    line-height: 80px;
+    border-radius: 50%;
+    width: 120px;
+    display: inline-block;
+    height: 120px;
+    padding: 20px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+    .green {
+        background: rgb(5, 204, 145);
+    }
+
+.blue {
+    background: rgb(0, 175, 239);
+}
+
+.badge {
+    font-size: 20px;
+}

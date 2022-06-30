@@ -1,0 +1,18 @@
+﻿<!-- Dog.razor -->
+@inherits Animal
+
+<p class="alert alert-success">I am the dog <i class="fas fa-dog"></i> '@Name'</p>
+
+@code {
+
+}
+
+
+<!-- Cat.razor -->
+@inherits Animal
+
+<p class="alert alert-warning">I am the cat <i class="fas fa-cat"></i> '@Name'</p>
+
+@code {
+
+}

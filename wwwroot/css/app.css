@@ -5,6 +5,7 @@ html, body {
     width: 100%;
     height: 100%;
     --main-color: #002060;
+    overflow: hidden;
 }
 
 #app,
@@ -160,4 +161,14 @@ p {
 
 .ml-200 {
     margin-left: 200px !important;
+}
+
+.snowflake {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: linear-gradient(white, white); /* Workaround for Chromium's selective color inversion */
+    border-radius: 50%;
+    filter: drop-shadow(0 0 10px white);
+    z-index: 99999;
 }

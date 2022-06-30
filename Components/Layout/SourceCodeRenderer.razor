@@ -17,9 +17,12 @@
     private string highlightedSourceCodeHtml;
 
     private string sourceCode;
-    
+
     [Parameter]
     public string SourceCodeKey { get; set; }
+
+    [Parameter]
+    public string SourceCode { get; set; }
 
     [Parameter]
     public string Language { get; set; }
@@ -29,6 +32,11 @@
         if (!string.IsNullOrWhiteSpace(SourceCodeKey) && !string.IsNullOrWhiteSpace(Language))
         {
             this.sourceCode = await SourceCodeProvider.GetSourceCodeStringAsync(SourceCodeKey); 
+            this.highlightedSourceCodeHtml = await JS.InvokeAsync<string>("highlightCode", this.sourceCode, Language);
+        }
+        else if (!string.IsNullOrWhiteSpace(SourceCode) && !string.IsNullOrWhiteSpace(Language))
+        {
+            this.sourceCode = SourceCode;
             this.highlightedSourceCodeHtml = await JS.InvokeAsync<string>("highlightCode", this.sourceCode, Language);
         }
     }

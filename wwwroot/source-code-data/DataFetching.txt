@@ -1,0 +1,34 @@
+﻿@using Newtonsoft.Json
+@inject HttpClient HttpClient
+
+<div class="m-auto">
+   <div class="input-group mb-3">
+      <input @bind="sourceUrl" class="form-control" placeholder="Source URL"/>
+      <button @onclick="FetchDataAsync" class="btn btn-primary">Fetch</button>
+   </div>
+   
+   @if (!string.IsNullOrWhiteSpace(resultJson))
+   {
+       <SourceCodeRenderer SourceCode="@resultJson" Language="json"/>
+   }
+</div>
+
+
+@code {
+    private string sourceUrl;
+    private string resultJson;
+
+    private async Task FetchDataAsync()
+    {
+        try
+        {
+            var rawJson = await HttpClient.GetStringAsync(this.sourceUrl);
+            var parsedJson = JsonConvert.DeserializeObject(rawJson);
+            this.resultJson = JsonConvert.SerializeObject(parsedJson, Formatting.Indented);
+        }
+        catch (Exception ex)
+        {
+            this.resultJson = null;
+        }
+    }
+}

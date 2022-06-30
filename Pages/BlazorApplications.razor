@@ -1,11 +1,30 @@
-﻿@page "/blazor/comparison"
+﻿@page "/blazor/applications"
 @inherits SlidePage
 
-<PageTitle>@GetBrandedTitle($"Comparison | Blazor | {Texts.Title}")</PageTitle>
+<PageTitle>@GetBrandedTitle($"Applications | Blazor | {Texts.Title}")</PageTitle>
 
-<SlideContent HeaderTitle="Comparison" HeaderSection="Blazor">
+<SlideContent HeaderTitle="Applications" HeaderSection="Blazor">
     <div class="w-100 row">
-
+        <div class="col-4 text-center">
+            <span class="icon blue">
+                <i class="fa-brands fa-chrome"></i>
+            </span>
+            <h3>Web Applications</h3>
+        </div>
+        <div class="col-4 text-center">
+            <span class="icon green">
+                <i class="fa-solid fa-desktop"></i>
+            </span>
+            <h3>Desktop Applications</h3>
+            <span class="badge bg-info mt-2">Electron</span>
+        </div>
+        <div class="col-4 text-center">
+            <span class="icon blue">
+                <i class="fa-solid fa-mobile-screen"></i>
+            </span>
+            <h3>Mobile Applications</h3>
+            <span class="badge bg-warning mt-2">Experimental</span>
+        </div>
     </div>
 </SlideContent>
 

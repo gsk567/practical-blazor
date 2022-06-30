@@ -1,0 +1,51 @@
+﻿protected override void OnAfterRender(bool firstRender)
+{
+    if (firstRender)
+    {
+        this.consoleMock.Add("OnAfterRender [firstRender]");
+    }
+    else
+    {
+        this.consoleMock.Add("OnAfterRender");
+    }
+
+    base.OnAfterRender(firstRender);
+}
+
+protected override Task OnAfterRenderAsync(bool firstRender)
+{
+    if (firstRender)
+    {
+        this.consoleMock.Add("OnAfterRenderAsync [firstRender]");
+    }
+    else
+    {
+        this.consoleMock.Add("OnAfterRenderAsync");
+    }
+
+    return base.OnAfterRenderAsync(firstRender);
+}
+
+protected override void OnInitialized()
+{
+    this.consoleMock.Add("OnInitialized");
+    base.OnInitialized();
+}
+
+protected override Task OnInitializedAsync()
+{
+    this.consoleMock.Add("OnInitializedAsync");
+    return base.OnInitializedAsync();
+}
+
+protected override void OnParametersSet()
+{
+    this.consoleMock.Add("OnParametersSet");
+    base.OnParametersSet();
+}
+
+protected override Task OnParametersSetAsync()
+{
+    this.consoleMock.Add("OnParametersSetAsync");
+    return base.OnParametersSetAsync();
+}

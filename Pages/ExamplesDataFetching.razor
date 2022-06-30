@@ -1,6 +1,7 @@
 ﻿@page "/examples/data-fetching"
+@using Newtonsoft.Json
 @inherits SlidePage
-
+@inject HttpClient HttpClient
 
 <PageTitle>@GetBrandedTitle($"Data Fetching | Examples |{Texts.Title}")</PageTitle>
 
@@ -8,12 +9,20 @@
      <div class="d-flex">
          <div class="d-flex m-auto">
              <div class="m-auto">
-
+                 <div class="input-group mb-3">
+                    <input @bind="sourceUrl" class="form-control" placeholder="Source URL"/>
+                    <button @onclick="FetchDataAsync" class="btn btn-primary">Fetch</button>
+                 </div>
+                
+                @if (!string.IsNullOrWhiteSpace(resultJson))
+                {
+                    <SourceCodeRenderer SourceCode="@resultJson" Language="json"/>
+                }
              </div>
          </div>
          <div class="d-flex m-auto">
              <div class="d-flex m-auto">
-
+                <SourceCodeRenderer SourceCodeKey="DataFetching" Language="cshtml-razor"/>
              </div>
          </div>
      </div>
@@ -21,5 +30,20 @@
 
 
 @code {
+    private string sourceUrl;
+    private string resultJson;
 
+    private async Task FetchDataAsync()
+    {
+        try
+        {
+            var rawJson = await HttpClient.GetStringAsync(this.sourceUrl);
+            var parsedJson = JsonConvert.DeserializeObject(rawJson);
+            this.resultJson = JsonConvert.SerializeObject(parsedJson, Formatting.Indented);
+        }
+        catch (Exception ex)
+        {
+            this.resultJson = null;
+        }
+    }
 }
