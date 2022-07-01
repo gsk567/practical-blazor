@@ -10,7 +10,9 @@
                         else
                         {
                             <span class="index">
-                                <span class="oi oi-check me-3"></span>
+                                <span class="me-3">
+                                    <span class="@CheckIcon"></span>
+                                </span>
                             </span>
                         }
                         <span class="title">@Items.ElementAt(i)</span>
@@ -22,6 +24,9 @@
 @code {
     [Parameter]
     public IEnumerable<string> Items { get; set; }
+
+    [Parameter]
+    public string CheckIcon { get; set; } = "oi oi-check";
 
     [Parameter]
     public bool ShowNumberBullets { get; set; }

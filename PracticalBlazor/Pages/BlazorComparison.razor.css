@@ -15,8 +15,8 @@ td, th {
     color: var(--main-color);
     font-size: 20px;
     border: none;
-    padding: 12px;
-    margin-bottom: 12px;
+    padding: 6px;
+    margin-bottom: 6x;
 }
 
 td div {

@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PracticalBlazor", "PracticalBlazor.csproj", "{A7FD3156-473B-4F96-A497-E64902FFFEA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PracticalBlazor", "PracticalBlazor\PracticalBlazor.csproj", "{A7FD3156-473B-4F96-A497-E64902FFFEA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticalBlazor.Tests", "PracticalBlazor.Tests\PracticalBlazor.Tests.csproj", "{179D9D4C-4408-4FBE-95C5-3EE5BF63FDA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{A7FD3156-473B-4F96-A497-E64902FFFEA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7FD3156-473B-4F96-A497-E64902FFFEA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7FD3156-473B-4F96-A497-E64902FFFEA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{179D9D4C-4408-4FBE-95C5-3EE5BF63FDA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{179D9D4C-4408-4FBE-95C5-3EE5BF63FDA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{179D9D4C-4408-4FBE-95C5-3EE5BF63FDA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{179D9D4C-4408-4FBE-95C5-3EE5BF63FDA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

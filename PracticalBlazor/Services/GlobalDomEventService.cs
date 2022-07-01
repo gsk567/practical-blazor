@@ -1,5 +1,4 @@
 ﻿using Microsoft.JSInterop;
-using PracticalBlazor.Events;
 using System;
 using System.Threading.Tasks;
 

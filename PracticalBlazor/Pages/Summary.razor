@@ -1,0 +1,37 @@
+﻿@page "/summary"
+@inherits SlidePage
+
+<PageTitle>@GetBrandedTitle($"Summary | {Texts.Title}")</PageTitle>
+
+<SlideContent HeaderSection="Practical Blazor" HeaderTitle="Summary">
+    <div class="row w-100 h-100">
+        <div id="pros" class="col">
+            <DefaultList Items="@pros" CheckIcon="fa-solid fa-face-smile"/>
+        </div>
+        <div id="cons" class="col">
+            <DefaultList Items="@cons" CheckIcon="fa-solid fa-face-frown"/>
+        </div>
+    </div>
+</SlideContent>
+
+@code {
+    private string[] pros = new string[]
+    {
+        "Clear and simple",
+        "Functional and flexible",
+        "Competitive to other frameworks",
+        "Easy framework transition",
+        "Type-safe and secure",
+        "Promising technology"
+    };
+
+    private string[] cons = new string[]
+    {
+        "Slow initial loading",
+        "Poor hot reload",
+        "Overcomplex general features",
+        "Lack of stylesheet preprocessing",
+        "JavaScript is a must for the most cases",
+        "Immature technology"
+    };
+}

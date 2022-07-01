@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PracticalBlazor.Events;
+namespace PracticalBlazor.Services;
 
 public class GlobalKeyCodePressedEventArgs : EventArgs
 {

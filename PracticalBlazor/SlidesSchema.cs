@@ -3,12 +3,12 @@ using System;
 using System.Collections.Generic;
 using Index = PracticalBlazor.Pages.Index;
 
-namespace PracticalBlazor
+namespace PracticalBlazor;
+
+public static class SlidesSchema
 {
-    public static class SlidesSchema
+    public static readonly IReadOnlyList<Type> OrderedSlidesTypes = new[]
     {
-        public static readonly IReadOnlyList<Type> OrderedSlidesTypes = new[]
-        {
             typeof(Index),
             typeof(WhoAmI),
             typeof(Agenda),
@@ -30,8 +30,8 @@ namespace PracticalBlazor
             typeof(ExamplesForms),
             typeof(ExamplesAuthentication),
             typeof(DemoIndex),
+            typeof(Summary),
             typeof(QAIndex),
             typeof(ThankYou)
         };
-    }
 }

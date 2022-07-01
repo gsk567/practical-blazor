@@ -10,7 +10,14 @@
          <div class="d-flex m-auto">
              <div class="m-auto">
                  <div class="input-group mb-3">
-                    <input @bind="sourceUrl" class="form-control" placeholder="Source URL"/>
+                     <select @bind="sourceUrl" class="form-control">
+                         <option value=""> - </option>
+                         <optgroup label="catfact.ninja"> 
+                             <option value="https://catfact.ninja/fact">https://catfact.ninja/fact</option>
+                             <option value="https://catfact.ninja/facts">https://catfact.ninja/facts</option>
+                             <option value="https://catfact.ninja/breeds">https://catfact.ninja/breeds</option>
+                         </optgroup>
+                     </select>
                     <button @onclick="FetchDataAsync" class="btn btn-primary">Fetch</button>
                  </div>
                 

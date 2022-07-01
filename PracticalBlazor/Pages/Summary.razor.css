@@ -1,0 +1,7 @@
+﻿#pros ::deep .default-item {
+    color: #0c8f2a;
+}
+
+#cons ::deep .default-item {
+    color: #b41818;
+}
