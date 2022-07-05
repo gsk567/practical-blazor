@@ -5,16 +5,16 @@
 
 <SlideContent HeaderTitle="Hosting Models" HeaderSection="Blazor">
 <div class="row w-100">
-    <div class="col-6">
+    <div class="col-4">
         <div title="Blazor Server">
             <div class="row">
                 <div class="col-12">
                     <h3 class="title">Blazor Server</h3>
                 </div>
-                <div class="col-5">
-                    <img class="w-100" src="/images/blazor-server.png">
+                <div class="col-12 text-center">
+                    <img src="/images/blazor-server.png">
                 </div>
-                <div class="col-7">
+                <div class="col-12">
                     <DefaultList Items="@(new string []
                     {
                         "Complete .NET Core API compatibility",
@@ -27,21 +27,42 @@
             </div>
         </div>
     </div>
-    <div class="col-6">
+    <div class="col-4">
         <div title="Blazor WebAssembly">
             <div class="row">
                 <div class="col-12">
                     <h3 class="title">Blazor WebAssembly</h3>
                 </div>
-                <div class="col-3">
-                    <img class="w-100" src="/images/blazor-webassembly.png">
+                <div class="col-12 text-center">
+                    <img src="/images/blazor-webassembly.png">
                 </div>
-                <div class="col-9">
+                <div class="col-12">
                     <DefaultList Items="@(new string []
                     {
                         "Run apps offline once downloaded",
                         "Static site hosting",
                         "Offloads processing to clients"
+                    })">
+                    </DefaultList>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div title="Blazor Hybrit">
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="title">Blazor Hybrit</h3>
+                </div>
+                <div class="col-12 text-center">
+                    <img src="/images/blazor-hybrit.png">
+                </div>
+                <div class="col-12">
+                    <DefaultList Items="@(new string []
+                    {
+                        "Reuse existing components that can be shared across mobile, desktop, and web",
+                        "Leverage web development skills, experience, and resources",
+                        "Apps have full access to the native capabilities of the device"
                     })">
                     </DefaultList>
                 </div>
